@@ -1,0 +1,12 @@
+services:
+    ########################
+    # Custom Elastic Client
+    ########################
+    ElasticBundle\Services\ElasticClientService:
+        public: true
+        arguments:
+            $configuration: { elasticHost: '%env(ELASTIC_HOST)%', elasticPort: '%env(ELASTIC_PORT)%', indexName: 'documents_dev'}
+
+    ElasticBundle\Normalizer\:
+        resource: '../../Normalizer/*'
+        tags: [ 'serializer.normalizer' ]
