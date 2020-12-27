@@ -1,0 +1,11 @@
+elastic:
+    indexes:
+        books:
+            document:
+                title: { type: keyword }
+                description: { type: text }
+                author: { type: object }
+                publication_year: { type: date }
+            # AppBundle\Filter\BookFilter
+            filter: ''
+

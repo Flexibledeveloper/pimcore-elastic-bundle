@@ -1,0 +1,30 @@
+{
+  "name": "Flexibledeveloper/pimcore-elastic-bundle",
+  "description": "Bundle to use elastica/elastic with pimcore for dataobjects/pages/assets",
+  "type": "pimcore-bundle",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Florian Völker",
+      "email": "florian@flexibledeveloper.eu"
+    }
+  ],
+  "require": {
+    "php": "^7.4",
+    "ext-json": "*",
+    "pimcore/pimcore": "^6.8",
+    "ruflin/elastica": "^7.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Flexibledeveloper\\PimcoreElasticBundle\\": "src/"
+    }
+  },
+  "extra": {
+    "pimcore": {
+      "bundles": [
+        "Flexibledeveloper\\PimcoreElasticBundle\\PimcoreElasticBundle"
+      ]
+    }
+  }
+}
