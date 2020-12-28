@@ -2,8 +2,6 @@
 
 namespace ElasticBundle\Command;
 
-use ElasticBundle\Services\ElasticaQueryService;
-use ElasticBundle\Services\ElasticDataService;
 use Pimcore\Console\AbstractCommand;
 use Pimcore\Model\Document;
 use Symfony\Component\Console\Input\InputArgument;

@@ -2,7 +2,7 @@
 
 namespace ElasticBundle\Command;
 
-use ElasticBundle\Services\ElasticaQueryService;
+use Flexibledeveloper\PimcoreElasticBundle\Services\ElasticaQueryService;
 use Pimcore\Console\AbstractCommand;
 use Pimcore\Model\DataObject\Course;
 use Pimcore\Model\Document;

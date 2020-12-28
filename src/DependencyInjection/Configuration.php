@@ -21,8 +21,10 @@ class Configuration implements ConfigurationInterface
 
         $treeBuilder->getRootNode()
             ->children()
+                ->scalarNode('serverURL')->defaultValue('localhost')->end()
+                ->integerNode('serverPort')->defaultValue(9200)->end()
                 ->arrayNode('indexes')
-                    ->arrayPrototype() // IndexName
+                    ->arrayPrototype()
                     ->children()
                         ->arrayNode('document')
                             ->variablePrototype()->end()

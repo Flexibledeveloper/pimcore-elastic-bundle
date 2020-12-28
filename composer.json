@@ -1,8 +1,8 @@
 {
-  "name": "Flexibledeveloper/pimcore-elastic-bundle",
+  "name": "flexibledeveloper/pimcore-elastic-bundle",
   "description": "Bundle to use elastica/elastic with pimcore for dataobjects/pages/assets",
   "type": "pimcore-bundle",
-  "license": "proprietary",
+  "license": "MIT",
   "authors": [
     {
       "name": "Florian Völker",

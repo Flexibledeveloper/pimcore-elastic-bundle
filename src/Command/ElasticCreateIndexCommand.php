@@ -1,8 +1,8 @@
 <?php
 
-namespace ElasticBundle\Command;
+namespace Flexibledeveloper\PimcoreElasticBundle\Command;
 
-use ElasticBundle\Services\ElasticClientService;
+use Flexibledeveloper\PimcoreElasticBundle\Services\ElasticClientService;
 use Pimcore\Console\AbstractCommand;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;

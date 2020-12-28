@@ -16,6 +16,18 @@ class ElasticExtension extends Extension
 
         $this->loadServicesConfiguration($container);
 
+        $this->loadServerSettings($config, $container);
+        $this->loadConfigSettingsForIndexesIfExists($config, $container);
+    }
+
+    private function loadServicesConfiguration(ContainerBuilder $container): void
+    {
+        $loader = new YamlFileLoader($container, new FileLocator(__DIR__ . '/../Resources/config'));
+        $loader->load('services.yml');
+    }
+
+    private function loadConfigSettingsForIndexesIfExists(array $config, ContainerBuilder $container): void
+    {
         foreach($config['indexes'] as $indexName => $indexConfig) {
             if (!array_key_exists('filter', $indexConfig)) {
                 continue;
@@ -25,9 +37,14 @@ class ElasticExtension extends Extension
         }
     }
 
-    private function loadServicesConfiguration(ContainerBuilder $container): void
+    private function loadServerSettings(array $config, ContainerBuilder $container): void
     {
-        $loader = new YamlFileLoader($container, new FileLocator(__DIR__ . '/../Resources/config'));
-        $loader->load('services.yml');
+        if (array_key_exists('serverURL', $config)) {
+            $container->setParameter('serverURL', $config['serverURL']);
+        }
+
+        if (array_key_exists('serverPort', $config)) {
+            $container->setParameter('serverPort', $config['serverPort']);
+        }
     }
 }

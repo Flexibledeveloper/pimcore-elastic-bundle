@@ -15,18 +15,18 @@ services:
     ElasticBundle\Services\:
         resource: '../../Services'
 
-    ElasticBundle\Services\ElasticClientService:
+    Flexibledeveloper\PimcoreElasticBundle\Services\ElasticClientService:
         arguments:
             $configuration: { elasticHost: '%env(ELASTIC_HOST)%', elasticPort: '%env(ELASTIC_PORT)%'}
 
-    ElasticBundle\Services\ElasticaConnectionService:
+    Flexibledeveloper\PimcoreElasticBundle\Services\ElasticaConnectionService:
         arguments:
             $configuration: { elasticHost: '%env(ELASTIC_HOST)%', elasticPort: '%env(ELASTIC_PORT)%' }
 
-    ElasticBundle\Services\ElasticFilterService:
+    Flexibledeveloper\PimcoreElasticBundle\Services\ElasticFilterService:
         arguments:
             $configuration: { configFilePath: '../Resources/config/elastic.yml' }
 
-    ElasticBundle\Command\:
+    Flexibledeveloper\PimcoreElasticBundle\Command\:
         resource: '../../Command'
         tags: [ 'console.command' ]
