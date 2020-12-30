@@ -10,20 +10,19 @@
     }
   ],
   "require": {
-    "php": "^7.4",
+    "php": ">=7.4 || 8.0",
     "ext-json": "*",
-    "pimcore/pimcore": "^6.8",
-    "ruflin/elastica": "^7.0"
+    "ruflin/elastica": "dev-master"
   },
   "autoload": {
     "psr-4": {
-      "Flexibledeveloper\\PimcoreElasticBundle\\": "src/"
+      "PimcoreElasticBundle\\": "src/PimcoreElasticBundle"
     }
   },
   "extra": {
     "pimcore": {
       "bundles": [
-        "Flexibledeveloper\\PimcoreElasticBundle\\PimcoreElasticBundle"
+        "PimcoreElasticBundle\\PimcoreElasticBundle"
       ]
     }
   }

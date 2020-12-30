@@ -1,4 +1,4 @@
-elastic:
+pimcore_elastic:
     indexes:
         books:
             document:

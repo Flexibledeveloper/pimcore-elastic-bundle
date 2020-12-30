@@ -12,21 +12,18 @@ use Symfony\Component\Config\Definition\ConfigurationInterface;
  */
 class Configuration implements ConfigurationInterface
 {
-    /**
-     * {@inheritdoc}
-     */
-    public function getConfigTreeBuilder()
+    public function getConfigTreeBuilder(): TreeBuilder
     {
-        $treeBuilder = new TreeBuilder('elastic');
+        $treeBuilder = new TreeBuilder('pimcore_elastic');
 
         $treeBuilder->getRootNode()
             ->children()
                 ->scalarNode('serverURL')->defaultValue('localhost')->end()
                 ->integerNode('serverPort')->defaultValue(9200)->end()
                 ->arrayNode('indexes')
-                    ->arrayPrototype()
-                    ->children()
-                        ->arrayNode('document')
+                        ->arrayPrototype()
+                        ->children()
+                            ->arrayNode('document')
                             ->variablePrototype()->end()
                         ->end()
                         ->variableNode('filter')->end()

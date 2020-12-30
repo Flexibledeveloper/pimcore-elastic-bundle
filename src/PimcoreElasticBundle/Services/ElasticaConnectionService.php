@@ -3,17 +3,19 @@
 namespace Flexibledeveloper\PimcoreElasticBundle\Services;
 
 use Elastica\Client;
+use Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface;
 
 class ElasticaConnectionService
 {
     protected array $configuration;
     protected ?Client $httpClient;
+    protected ParameterBagInterface $params;
 
-    public function __construct(array $configuration = [])
+    public function __construct(ParameterBagInterface $params)
     {
-        $this->configuration = $configuration;
         $this->httpClient = null;
         $this->connect();
+        $this->params = $params;
     }
 
     public function getClient(): Client
@@ -28,8 +30,8 @@ class ElasticaConnectionService
     private function connect(): void
     {
         $this->httpClient = new Client([
-            'host' => $this->configuration['elasticHost'],
-            'port' => $this->configuration['elasticPort']
+            'host' => $this->params->get('serverURL'),
+            'port' => $this->params->get('serverPort')
         ]);
 
     }

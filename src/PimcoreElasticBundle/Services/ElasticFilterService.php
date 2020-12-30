@@ -1,6 +1,6 @@
 <?php
 
-namespace Flexibledeveloper\PimcoreElasticBundle\Services;
+namespace PimcoreElasticBundle\PimcoreElasticBundle\PimcoreElasticBundle\Services;
 
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\Serializer\SerializerInterface;
