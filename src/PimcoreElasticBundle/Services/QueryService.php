@@ -4,11 +4,11 @@ namespace Flexibledeveloper\PimcoreElasticBundle\Services;
 
 use Elastica\Query;
 
-class ElasticaQueryService
+class QueryService
 {
-    protected ElasticaConnectionService $elasticaClient;
+    protected ConnectionService $elasticaClient;
 
-    public function __construct(ElasticaConnectionService $elasticaClient)
+    public function __construct(ConnectionService $elasticaClient)
     {
         $this->elasticaClient = $elasticaClient;
     }

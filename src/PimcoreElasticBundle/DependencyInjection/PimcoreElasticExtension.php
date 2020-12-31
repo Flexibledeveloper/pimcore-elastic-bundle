@@ -35,11 +35,7 @@ class PimcoreElasticExtension extends Extension
     private function loadConfigSettingsForIndexesIfExists(array $config, ContainerBuilder $container): void
     {
         foreach($config['indexes'] as $indexName => $indexConfig) {
-            if (!array_key_exists('filter', $indexConfig)) {
-                continue;
-            }
-
-            $container->setParameter(sprintf('elastic.indexes.%s.filter', $indexName), $indexConfig['filter']);
+            $container->setParameter(sprintf('elastic.indexes.%s', $indexName), $indexConfig);
         }
     }
 
