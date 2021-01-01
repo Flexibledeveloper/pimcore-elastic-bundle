@@ -10,9 +10,10 @@
     }
   ],
   "require": {
-    "php": ">=7.4 || 8.0",
+    "php": ">=7.4",
     "ext-json": "*",
-    "ruflin/elastica": "7.0.0"
+    "ruflin/elastica": "7.0.0",
+    "pimcore/pimcore": "^6.8"
   },
   "autoload": {
     "psr-4": {
