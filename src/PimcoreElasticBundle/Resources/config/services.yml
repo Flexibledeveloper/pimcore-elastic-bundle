@@ -7,3 +7,6 @@ services:
     Flexibledeveloper\PimcoreElasticBundle\Services\:
         resource: '../../Services'
         exclude: '../../Services/FilterService.php'
+
+    Flexibledeveloper\PimcoreElasticBundle\EventSubscriber\:
+        resource: "../../EventSubscriber"
