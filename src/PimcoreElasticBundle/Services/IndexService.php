@@ -3,8 +3,8 @@
 namespace Flexibledeveloper\PimcoreElasticBundle\Services;
 
 use Elastica\Client;
-use Elastica\Index;
 use Elastica\Index\Stats;
+use Elastica\Index;
 use Elastica\Mapping;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
@@ -44,6 +44,11 @@ class IndexService
     public function getIndexStatus(string $indexName): Stats
     {
         return $this->client->getIndex($indexName)->getStats();
+    }
+
+    public function getIndex(string $indexName): Index
+    {
+        return $this->client->getIndex($indexName);
     }
 
     private function createMappings(string $indexName): Mapping

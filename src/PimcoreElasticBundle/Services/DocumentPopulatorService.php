@@ -31,7 +31,7 @@ class DocumentPopulatorService
         /** @var Index $index */
         $index = $this->indexService->getIndex($indexName);
 
-        foreach ( $objects as $object) {
+        foreach ($objects as $object) {
             $index->addDocument(
                 new Document(null, $object)
             );
