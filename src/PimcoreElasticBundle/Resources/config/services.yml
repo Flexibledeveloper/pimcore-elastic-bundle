@@ -10,3 +10,6 @@ services:
 
     Flexibledeveloper\PimcoreElasticBundle\EventSubscriber\:
         resource: "../../EventSubscriber"
+
+    Flexibledeveloper\PimcoreElasticBundle\Normalizer\:
+        resource: "../../Normalizer"
